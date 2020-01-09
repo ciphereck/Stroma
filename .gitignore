@@ -13,3 +13,4 @@
 /captures
 .externalNativeBuild
 .cxx
+/server/node_modules
