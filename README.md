@@ -17,16 +17,28 @@ When one gives laptop to his/her aquinatance, he/she can start locking session a
 
   
  ### Prerequisites  
-       
+  ```sh
+       1. Android Studio
+       2. NodeJS
+       3. JavaScript
+  ```
  
  ### Clone
 
+  ```sh
+      git clone https://github.com/ciphereck/Stroma.git
+      cd Stroma
+  ```
   
  ### Installation
   
   #### Android
 
   #### Backend / APIs
+  ```sh
+      cd server  
+      npm install
+  ```
 
   #### Extensions
    ###### Chrome
@@ -41,8 +53,8 @@ When one gives laptop to his/her aquinatance, he/she can start locking session a
 ## Contributing
 
 ## Contributors
-
-## Man Behind Idea!
+   * Mudit Jain  
+   * Akash Goyal
 
 ## License
 
