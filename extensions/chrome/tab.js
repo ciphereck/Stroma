@@ -11,52 +11,52 @@ class Tab {
 	}
 
 	//Getters
-	private static get TOTAL_TABS() {
+	static get TOTAL_TABS() {
 		return Tab.#TOTAL_TABS
 	}
 
-	private get stromaId() {
-		return #stromaId;
+	get stromaId() {
+		return this.#stromaId;
 	}
 
-	private get id() {
-		return #id;
+	get id() {
+		return this.#id;
 	}
 
-	private get index() {
-		return #index;
+	get index() {
+		return this.#index;
 	}
 
-	private get windowId() {
-		return #windowId;
+	get windowId() {
+		return this.#windowId;
 	}
 
-	private get url() {
-		return #url;
+	get url() {
+		return this.#url;
 	}
 
-	//Setters
-	private static set TOTAL_TABS(TOTAL_TABS) {
+    //Setters
+	static set TOTAL_TABS(TOTAL_TABS) {
 		Tab.#TOTAL_TABS = TOTAL_TABS;
 	}
 
-	private set stromaId(stromaId) {
+	set stromaId(stromaId) {
 		this.#stromaId = stromaId;
 	}
 
-	private set id(id) {
+	set id(id) {
 		this.#id = id;
 	}
 
-	private set index(index) {
+	set index(index) {
 		this.#index = index;
 	}
 
-	private set windowId(windowId) {
+	set windowId(windowId) {
 		this.#windowId = windowId;
 	}
 
-	private set url(url) {
+	set url(url) {
 		this.#url = url;
 	}
 }
