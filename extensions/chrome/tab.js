@@ -1,30 +1,17 @@
 class Tab {
-	static #TOTAL_TABS = 0n
-	#stromaId
 	#id
-	#index
 	#windowId
 	#url
 
-	constructor() {
-
+	constructor(tab) {
+		this.#id = tab.id;
+		this.#windowId = tab.windowId;
+		this.#url = tab.url;
 	}
 
 	//Getters
-	static get TOTAL_TABS() {
-		return Tab.#TOTAL_TABS
-	}
-
-	get stromaId() {
-		return this.#stromaId;
-	}
-
 	get id() {
 		return this.#id;
-	}
-
-	get index() {
-		return this.#index;
 	}
 
 	get windowId() {
@@ -36,20 +23,8 @@ class Tab {
 	}
 
     //Setters
-	static set TOTAL_TABS(TOTAL_TABS) {
-		Tab.#TOTAL_TABS = TOTAL_TABS;
-	}
-
-	set stromaId(stromaId) {
-		this.#stromaId = stromaId;
-	}
-
 	set id(id) {
 		this.#id = id;
-	}
-
-	set index(index) {
-		this.#index = index;
 	}
 
 	set windowId(windowId) {
