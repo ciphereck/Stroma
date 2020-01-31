@@ -3,7 +3,7 @@
 	"version": "1.1",
 	"description": "A web browser extension cum android application that provides a much better privacy by locking individual web browser tabs or individual URLs.",
 	"background": {
-	  "scripts": ["Chrome.js", "tab.js", "index.js"],
+	  "scripts": ["Chrome.js", "tabs.js" , "tab.js", "index.js"],
 	  "persistent": false
 	},
 	"permissions": [
