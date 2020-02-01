@@ -1,6 +1,5 @@
 class Tab {
 	#id
-	#windowId
 	#url
 	#status
 	#favIconUrl
@@ -8,7 +7,6 @@ class Tab {
 
 	constructor(tab) {
 		this.#id = tab.id;
-		this.#windowId = tab.windowId;
 		this.#url = tab.url;
 		this.#status = tab.status;
 		this.#favIconUrl = tab.favIconUrl;
@@ -18,10 +16,6 @@ class Tab {
 	//Getters
 	get id() {
 		return this.#id;
-	}
-
-	get windowId() {
-		return this.#windowId;
 	}
 
 	get url() {
@@ -45,10 +39,6 @@ class Tab {
 		this.#id = id;
 	}
 
-	set windowId(windowId) {
-		this.#windowId = windowId;
-	}
-
 	set url(url) {
 		this.#url = url;
 	}
@@ -64,5 +54,4 @@ class Tab {
 	set title(title) {
 		this.#title = title;
 	}
-	
 }

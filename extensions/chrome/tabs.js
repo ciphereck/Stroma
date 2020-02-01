@@ -2,23 +2,7 @@ class Tabs {
     #tabMap = new Map()
 
     constructor() {
-        const thisValue = this
-        chrome.windows.getAll({}, function (windowArray) {
-            windowArray.forEach(iterateWindow)
-        })
-
-        var iterateWindow = function (individualWindow) {
-            var queryInfo = {
-                "windowId": individualWindow.id
-            }
-            chrome.tabs.query(queryInfo, function (tabArray) {
-                tabArray.forEach(addTab)
-            })
-        }
-
-        var addTab = function (individualTab) {
-            thisValue.addTab(new Tab(individualTab))
-        }
+        Chrome.addAlreadyOpenedTabs()
     }
 
     get tabMap() {
@@ -32,8 +16,7 @@ class Tabs {
     }
 
     getSpecificTab(id) {
-        this.#tabMap.get(id)
-        this.showTabs()
+        return this.#tabMap.get(id)
     }
 
     setTab(tab) {

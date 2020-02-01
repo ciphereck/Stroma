@@ -37,4 +37,23 @@ class Chrome {
     static getOnReplacedListener() {
         return chrome.tabs.onReplaced;
     }
+
+    static addAlreadyOpenedTabs(){
+        chrome.windows.getAll({}, function (windowArray) {
+            windowArray.forEach(iterateWindow)
+        })
+
+        var iterateWindow = function (individualWindow) {
+            var queryInfo = {
+                "windowId": individualWindow.id
+            }
+            chrome.tabs.query(queryInfo, function (tabArray) {
+                tabArray.forEach(addTab)
+            })
+        }
+
+        var addTab = function (individualTab) {
+            tabs.addTab(new Tab(individualTab))
+        }
+    }
 }
