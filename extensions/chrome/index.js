@@ -9,7 +9,6 @@ Chrome.getOnRemovedListener().addListener(function (chromeTabid, removeInfo) {
 })
 
 Chrome.getOnUpdateListener().addListener(function(chromeTabid, changeInfo, chromeTab) {
-    console.log(changeInfo)
     if(changeInfo.status != undefined) {
       tabs.updateTabStatus(chromeTabid, changeInfo.status)
     }
