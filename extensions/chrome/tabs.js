@@ -4,19 +4,19 @@ class Tabs {
     constructor() {
         const thisValue = this
         chrome.windows.getAll({}, function (windowArray) {
-            windowArray.forEach(fun)
+            windowArray.forEach(iterateWindow)
         })
 
-        var fun = function (individualWindow) {
+        var iterateWindow = function (individualWindow) {
             var queryInfo = {
                 "windowId": individualWindow.id
             }
             chrome.tabs.query(queryInfo, function (tabArray) {
-                tabArray.forEach(fun1)
+                tabArray.forEach(addTab)
             })
         }
 
-        var fun1 = function (individualTab) {
+        var addTab = function (individualTab) {
             thisValue.addTab(new Tab(individualTab))
         }
     }
