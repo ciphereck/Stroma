@@ -56,4 +56,15 @@ class Chrome {
             tabs.addTab(new Tab(individualTab))
         }
     }
+
+    static blockSpecificTab(id) {
+        chrome.tabs.setZoom(id, 1000000, function () {
+            let password = prompt("Enter password")
+
+            if (password == "mudit") {
+                tabs.getSpecificTab(id).isBlocked = false
+                chrome.tabs.setZoom(id, 0)
+            }
+        })
+    }
 }

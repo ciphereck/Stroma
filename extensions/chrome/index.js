@@ -25,3 +25,13 @@ Chrome.getOnUpdateListener().addListener(function(chromeTabid, changeInfo, chrom
        tabs.updateTabTitle(chromeTabid, changeInfo.title)
     }
 })
+
+Chrome.getOnActivatedListener().addListener(function (activeInfo) {
+    if( tabs.isLocked ) {
+        if ( Backend.getIsLocked( tabs.getSpecificTab(activeInfo.tabId).url ) == true ) {
+            if( tabs.getSpecificTab(activeInfo.tabId).isBlocked ) {
+                Chrome.blockSpecificTab(activeInfo.tabId)
+            }
+        }
+    }
+})

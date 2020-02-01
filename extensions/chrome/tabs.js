@@ -1,8 +1,14 @@
 class Tabs {
     #tabMap = new Map()
+    #isLocked
 
     constructor() {
         Chrome.addAlreadyOpenedTabs()
+        this.#isLocked = true
+    }
+
+    get isLocked() {
+        return this.#isLocked
     }
 
     get tabMap() {
@@ -22,6 +28,10 @@ class Tabs {
     setTab(tab) {
         this.#tabMap.set(tab.id, tab)
         this.showTabs()
+    }
+
+    set isLocked(isLocked) {
+        this.#isLocked = isLocked
     }
 
     deleteTab(id) {

@@ -4,6 +4,7 @@ class Tab {
 	#status
 	#favIconUrl
 	#title
+	#isBlocked
 
 	constructor(tab) {
 		this.#id = tab.id;
@@ -11,6 +12,7 @@ class Tab {
 		this.#status = tab.status;
 		this.#favIconUrl = tab.favIconUrl;
 		this.#title = tab.title;
+		this.#isBlocked = true
 	}
 
 	//Getters
@@ -34,6 +36,10 @@ class Tab {
 		 return this.#title;
 	}
 
+	get isBlocked() {
+		return this.#isBlocked;
+	}
+
     //Setters
 	set id(id) {
 		this.#id = id;
@@ -53,5 +59,9 @@ class Tab {
 
 	set title(title) {
 		this.#title = title;
+	}
+
+	set isBlocked(isBlocked) {
+		this.#isBlocked = isBlocked
 	}
 }
