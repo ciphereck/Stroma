@@ -9,10 +9,11 @@ Chrome.getOnRemovedListener().addListener(function (chromeTabid, removeInfo) {
 })
 
 Chrome.getOnUpdateListener().addListener(function(chromeTabid, changeInfo, chromeTab) {
-    console.log(changeInfo)
+
     if(changeInfo.status != undefined) {
       tabs.updateTabStatus(chromeTabid, changeInfo.status)
     }
+
 
     if(changeInfo.url != undefined ) {
        tabs.updateTabUrl(chromeTabid, changeInfo.url)
@@ -25,4 +26,12 @@ Chrome.getOnUpdateListener().addListener(function(chromeTabid, changeInfo, chrom
     if(changeInfo.title != undefined) {
        tabs.updateTabTitle(chromeTabid, changeInfo.title)
     }
+})
+
+Chrome.getOnActivatedListener().addListener(function(activeInfo) {
+       console.log("Tab Activated")
+})
+
+Chrome.getOnAttachedListener().addListener(function(chromeTabid, attachInfo) {
+      tabs.updateTabWindowId(chromeTabid, attachInfo.newWindowId)
 })

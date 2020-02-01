@@ -49,4 +49,9 @@ class Tabs {
       this.#tabMap.get(id).title = title;
       this.showTabs()
     }
+
+    updateTabWindowId(id, windowId) {
+      this.#tabMap.get(id).windowId = windowId;
+      this.showTabs()
+    }
 }
