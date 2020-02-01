@@ -1,6 +1,26 @@
 class Tabs {
     #tabMap = new Map()
 
+    constructor() {
+        const thisValue = this
+        chrome.windows.getAll({}, function (windowArray) {
+            windowArray.forEach(fun)
+        })
+
+        var fun = function (individualWindow) {
+            var queryInfo = {
+                "windowId": individualWindow.id
+            }
+            chrome.tabs.query(queryInfo, function (tabArray) {
+                tabArray.forEach(fun1)
+            })
+        }
+
+        var fun1 = function (individualTab) {
+            thisValue.addTab(new Tab(individualTab))
+        }
+    }
+
     get tabMap() {
         return this.#tabMap
         this.showTabs()
